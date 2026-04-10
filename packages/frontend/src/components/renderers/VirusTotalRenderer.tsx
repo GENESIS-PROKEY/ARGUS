@@ -1,0 +1,1 @@
+export { VirusTotalRenderer } from './WafRenderer';

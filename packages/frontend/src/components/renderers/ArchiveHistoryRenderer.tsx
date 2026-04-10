@@ -1,0 +1,1 @@
+export { ArchiveHistoryRenderer } from './GlobalRankingRenderer';

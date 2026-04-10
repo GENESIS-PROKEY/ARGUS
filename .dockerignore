@@ -1,0 +1,12 @@
+node_modules
+.git
+.env
+*.md
+.github
+.vscode
+packages/frontend/node_modules
+packages/backend/node_modules
+packages/shared/node_modules
+packages/frontend/dist
+packages/backend/dist
+packages/shared/dist

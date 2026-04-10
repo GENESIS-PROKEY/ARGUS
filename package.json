@@ -1,0 +1,33 @@
+{
+  "name": "argus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ARGUS — All-Seeing Web Intelligence Platform",
+  "workspaces": [
+    "packages/shared",
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n shared,backend,frontend -c gray,cyan,magenta \"npm run dev -w @argus/shared\" \"npm run dev -w @argus/backend\" \"npm run dev -w @argus/frontend\"",
+    "dev:backend": "npm run dev -w @argus/backend",
+    "dev:frontend": "npm run dev -w @argus/frontend",
+    "build": "npm run build -w @argus/shared && concurrently \"npm run build -w @argus/backend\" \"npm run build -w @argus/frontend\"",
+    "build:shared": "npm run build -w @argus/shared",
+    "start": "npm run start -w @argus/backend",
+    "typecheck": "tsc -b packages/shared packages/backend",
+    "lint": "prettier --check \"packages/*/src/**/*.{ts,tsx,css}\"",
+    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx,css}\"",
+    "test": "npm run test -w @argus/backend",
+    "clean": "rimraf packages/*/dist packages/*/node_modules node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prettier": "^3.4.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

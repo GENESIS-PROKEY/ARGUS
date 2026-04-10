@@ -1,0 +1,1 @@
+export { QualityScoreRenderer } from './PerformanceRenderer';
